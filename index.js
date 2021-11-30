@@ -1,9 +1,9 @@
 'use strict';
 const fs = require('fs');
-// const cron = require('node-cron');
+const cron = require('node-cron');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-// const config = require('./config.json');
+const config = require('./config.json');
 
 //*commandsフォルダで管理
 //コマンドをcommandフォルダからcommandsに入れる
@@ -21,7 +21,7 @@ client.once("ready", async () => {
     for (const commandName in commands) {
         data.push(commands[commandName].data)
     }
-    await client.application.commands.set(data,492945951858884618);
+    await client.application.commands.set(data,config.serverId);
     console.log("Ready!");
 });
 
