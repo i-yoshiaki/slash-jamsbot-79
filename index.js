@@ -3,7 +3,9 @@ const fs = require('fs');
 const cron = require('node-cron');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const config = require('./configs/config.json');
+const config = require('./config.json');
+require('json5/lib/register');
+
 
 //*commandsフォルダで管理--------------------------------------------------------------------------------
 //コマンドをcommandフォルダからcommandsに入れる
@@ -22,7 +24,10 @@ client.once("ready", async () => {
         data.push(commands[commandName].data)
     }
     await client.application.commands.set(data,config.serverId);
+
+    //準備完了とステータス
     console.log("Ready!");
+    client.user.setActivity('原神');
 });
 
 //登録したコマンドの応答
@@ -44,8 +49,9 @@ client.on("interactionCreate", async (interaction) => {
 //*コマンドの登録~処理まで終了--------------------------------------------------------------------------------
 
 //*定期実行--------------------------------------------------------------------------------
-cron.schedule('0 8,20 * * *', () => {
-    const embed = require('./embed/regularExecute.json');
+cron.schedule('36 23 * * *', () => {
+    const embed = require('./embed/regularExecute.json5');
+
     //!トラベラーメンション
     //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
     client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
@@ -54,4 +60,4 @@ cron.schedule('0 8,20 * * *', () => {
 //*定期実行終了--------------------------------------------------------------------------------
 
 //*botログイン
-client.login();
+client.login(config.token);

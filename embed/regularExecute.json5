@@ -1,11 +1,15 @@
 {
+    //!タイトル
     "title": "原神定期通知",
+    //!色
     "color": 6697983,
+    //!送信者
     "author": {
         "name": "Genshin Impact",
         "url": "https://genshin.mihoyo.com/ja/home",
         "icon_url": "https://pbs.twimg.com/profile_images/1448077862586798081/oFE9yBoj_400x400.jpg"
     },
+    //!内容
     "fields": [
         {
             "name": "Twitter",
@@ -20,15 +24,17 @@
             "value": "🌐[テイワットマップ URL](https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?lang=ja-jp#/map/2)"
         },
         {
-        "name": "Webイベント!!クイズタイム…",
-        "value": "🌐[イベントURL](https://webstatic-sea.mihoyo.com/ys/event/answer-question/index.html)"
+            "name": "Webイベント!!",
+            "value": "🌐[イベントURL](https://webstatic-sea.mihoyo.com/ys/event/e20211203-album/index.html)"
         }
     ],
+    //!大きい画像
     "image": {
-        "url": "https://pbs.twimg.com/media/FE7H1KBaUAASaq5?format=jpg"
+        "url": "https://pbs.twimg.com/media/FFpeFtGacAENwgr?format=jpg&name=medium"
     },
+    //!フッター
     "footer": {
         "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
-        "text": "編集 2021/11/24 参量物質変換確認した？"
+        "text": "編集 2021/12/5 参量物質変換確認した？"
     }
 }
