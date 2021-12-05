@@ -3,9 +3,9 @@ const fs = require('fs');
 const cron = require('node-cron');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const config = require('./config.json');
+const config = require('./configs/config.json');
 
-//*commandsフォルダで管理
+//*commandsフォルダで管理--------------------------------------------------------------------------------
 //コマンドをcommandフォルダからcommandsに入れる
 const commands = {}
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -25,7 +25,7 @@ client.once("ready", async () => {
     console.log("Ready!");
 });
 
-//登録した
+//登録したコマンドの応答
 client.on("interactionCreate", async (interaction) => {
     if (!interaction.isCommand()) {
         return;
@@ -41,6 +41,7 @@ client.on("interactionCreate", async (interaction) => {
         })
     }
 });
+//*コマンドの登録~処理まで終了--------------------------------------------------------------------------------
 
 //botログイン
 client.login();
