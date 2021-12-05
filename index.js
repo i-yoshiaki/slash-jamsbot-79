@@ -43,5 +43,15 @@ client.on("interactionCreate", async (interaction) => {
 });
 //*コマンドの登録~処理まで終了--------------------------------------------------------------------------------
 
-//botログイン
+//*定期実行--------------------------------------------------------------------------------
+cron.schedule('0 8,20 * * *', () => {
+    const embed = require('./embed/regularExecute.json');
+    //!トラベラーメンション
+    //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
+    client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
+});
+
+//*定期実行終了--------------------------------------------------------------------------------
+
+//*botログイン
 client.login();
