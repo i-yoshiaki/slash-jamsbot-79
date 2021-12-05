@@ -5,7 +5,7 @@ const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const config = require('./config.json');
 
-//*commandsフォルダで管理
+//*commandsフォルダで管理--------------------------------------------------------------------------------
 //コマンドをcommandフォルダからcommandsに入れる
 const commands = {}
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -25,7 +25,7 @@ client.once("ready", async () => {
     console.log("Ready!");
 });
 
-//登録した
+//登録したコマンドの応答
 client.on("interactionCreate", async (interaction) => {
     if (!interaction.isCommand()) {
         return;
@@ -41,6 +41,17 @@ client.on("interactionCreate", async (interaction) => {
         })
     }
 });
+//*コマンドの登録~処理まで終了--------------------------------------------------------------------------------
 
-//botログイン
+//*定期実行--------------------------------------------------------------------------------
+cron.schedule('0 13 17 * * *', () => {
+    const embed = require('./embed/regularExecute.json');
+    //!トラベラーメンション
+    //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
+    client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
+});
+
+//*定期実行終了--------------------------------------------------------------------------------
+
+//*botログイン
 client.login();
