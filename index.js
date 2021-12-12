@@ -67,6 +67,14 @@ cron.schedule('0 0 1,15,28,12 * *', () => {
     //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
     client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
 });
+
+cron.schedule('0 21 1,15 * *', () => {
+    const embed = require('./embed/rasenStartEmbed.json5');
+
+    //!トラベラーメンション
+    //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
+    client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
+});
 //*螺旋終了定期終了--------------------------------------------------------------------------------
 
 //*botログイン

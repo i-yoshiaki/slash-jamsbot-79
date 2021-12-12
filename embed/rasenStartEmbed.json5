@@ -1,0 +1,21 @@
+{
+    //!タイトル
+    "title": "螺旋がそろそろリセットされました!!",
+    //!色
+    "color": 6697983,
+    //!送信者
+    "author": {
+        "name": "Genshin Impact",
+        "url": "https://genshin.mihoyo.com/ja/home",
+        "icon_url": "https://pbs.twimg.com/profile_images/1448077862586798081/oFE9yBoj_400x400.jpg"
+    },
+    //!大きい画像
+    "image": {
+        "url": "https://i.imgur.com/SA9q2qF.png"
+    },
+    //!フッター
+    "footer": {
+        "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+        "text": "編集 2021/12/11"
+    }
+}
