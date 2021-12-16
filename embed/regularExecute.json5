@@ -22,6 +22,10 @@
         {
             "name": "miHoYoLABテイワットマップ",
             "value": "🌐[テイワットマップ URL](https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?lang=ja-jp#/map/2)"
+        },
+        {
+            "name": "mihoyoLAB育成素材計算機",
+            "value": "🌐[育成素材計算機 URL](https://webstatic-sea.mihoyo.com/ys/event/calculator-sea/index.html)"
         }
         // ,{
         //     "name": "Webイベント!!",
