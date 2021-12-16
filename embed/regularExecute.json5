@@ -22,11 +22,11 @@
         {
             "name": "miHoYoLABテイワットマップ",
             "value": "🌐[テイワットマップ URL](https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?lang=ja-jp#/map/2)"
-        },
-        {
-            "name": "Webイベント!!",
-            "value": "🌐[イベントURL](https://webstatic-sea.mihoyo.com/ys/event/e20211203-album/index.html)"
         }
+        // ,{
+        //     "name": "Webイベント!!",
+        //     "value": "🌐[イベントURL](https://webstatic-sea.mihoyo.com/ys/event/e20211203-album/index.html)"
+        // }
     ],
     //!大きい画像
     "image": {
