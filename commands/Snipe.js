@@ -1,7 +1,7 @@
 module.exports = {
     data: {
         name: "snipe",
-        description: "スナイプするときに使います。10秒後に返信します。",
+        description: "スナイプするときに使います。",
     },
     async execute(interaction) {
         const wait = require('util').promisify(setTimeout);
