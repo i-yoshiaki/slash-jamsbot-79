@@ -25,6 +25,6 @@ module.exports = {
         await wait(1000);
         await interaction.editReply('1');
         await wait(1000);
-        await interaction.editReply('Go!');
+        await interaction.followUp('Go!');
     }
 }

@@ -49,11 +49,10 @@ client.on("interactionCreate", async (interaction) => {
 //*コマンドの登録~処理まで終了--------------------------------------------------------------------------------
 
 //*定期実行--------------------------------------------------------------------------------
+    //!トラベラーメンション使う場合
+    //!client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
 cron.schedule('0 8,20 * * *', () => {
     const embed = require('./embed/regularExecute.json5');
-
-    //!トラベラーメンション
-    //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
     client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
 });
 
@@ -62,17 +61,11 @@ cron.schedule('0 8,20 * * *', () => {
 //*螺旋終了定期--------------------------------------------------------------------------------
 cron.schedule('0 0 1,15,28,12 * *', () => {
     const embed = require('./embed/rasenEmbed.json5');
-
-    //!トラベラーメンション
-    //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
     client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
 });
 
 cron.schedule('0 21 1,15 * *', () => {
     const embed = require('./embed/rasenStartEmbed.json5');
-
-    //!トラベラーメンション
-    //client.channels.cache.get('789113538530639873').send(`<@&789178056136458313>`);
     client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
 });
 //*螺旋終了定期終了--------------------------------------------------------------------------------
