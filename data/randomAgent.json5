@@ -1,0 +1,73 @@
+{   
+    //!category  1:デュエリスト,2:イニシエーター,3:コントローラー,4:センチネル
+    "agent":[
+        {
+            "name": "ジェット",
+            "category":"1"
+        },
+        {
+            "name": "レイズ",
+            "category":"1"
+        },
+        {
+            "name": "ブリーチ",
+            "category":"2"
+        },
+        {
+            "name": "オーメン",
+            "category":"3"
+        },
+        {
+            "name": "ブリムストーン",
+            "category":"3"
+        },
+        {
+            "name": "フェニックス",
+            "category":"1"
+        },
+        {
+            "name": "セージ",
+            "category":"4"
+        },
+        {
+            "name": "ソーバ",
+            "category":"2"
+        },
+        {
+            "name": "ヴァイパー",
+            "category":"3"
+        },
+        {
+            "name": "サイファー",
+            "category":"4"
+        },
+        {
+            "name": "レイナ",
+            "category":"1"
+        },
+        {
+            "name": "キルジョイ",
+            "category":"4"
+        },
+        {
+            "name": "スカイ",
+            "category":"2"
+        },
+        {
+            "name": "ヨル",
+            "category":"1"
+        },
+        {
+            "name": "アストラ",
+            "category":"3"
+        },
+        {
+            "name": "KAY/O",
+            "category":"2"
+        },
+        {
+            "name": "チェンバー",
+            "category":"4"
+        }
+    ]
+}
