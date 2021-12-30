@@ -50,6 +50,8 @@ module.exports = {
         const critDamage=interaction.options.getNumber('crit-damage');
         const damageBonus=interaction.options.getNumber('damage-bonus');
         const elemental=interaction.options.getNumber('elemental');
+
+        let atackFlg=false;
         //*引数を変数に格納終了---------------
 
         //*ダメージ期待値計算開始---------------
@@ -69,5 +71,18 @@ module.exports = {
         }else{
             await interaction.reply('うまく処理できませんでした……');
         }
+        //*もし攻撃力が足りなそうだったら
+        if(atackWhite > atackGreen){
+            await interaction.followUp('攻撃力を上げると期待値が上がりやすいよ');
+            atackFlg=true;
+        }
+        //*もし攻撃力が足りなそうで会心率と会心ダメージが足りてなかったら
+        if(critRate <= 100 && critRate * 2 < critDamage && atackFlg == false){
+            await interaction.followUp('会心率を上げると期待値が上がりやすいよ');
+        }else if(critRate * 2 > critDamage && atackFlg == false){
+            await interaction.followUp('会心ダメージを上げると期待値が上がりやすいよ');
+        }
+        //*コピペ用数値
+        await interaction.followUp('攻撃力白:'+atackWhite+'\n攻撃力緑:'+atackGreen+'\n会心率:'+critRate+'\n会心ダメージ:'+critDamage+'\nダメージバフ:'+damageBonus+'\n元素熟知:'+elemental);
     }
 }
