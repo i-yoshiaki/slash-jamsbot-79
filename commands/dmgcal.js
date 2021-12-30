@@ -18,7 +18,7 @@ module.exports = {
             {
                 type: "NUMBER",
                 name: "crit-rate",
-                description: "会心率(単位%)",
+                description: "会心率",
                 required: true,
             },
             {
@@ -81,6 +81,10 @@ module.exports = {
             await interaction.followUp('会心率を上げると期待値が上がりやすいよ');
         }else if(critRate * 2 > critDamage && atackFlg == false){
             await interaction.followUp('会心ダメージを上げると期待値が上がりやすいよ');
+        }
+        //*もしバフが115%超えてたら
+        if(damageBonus > 115){
+            await interaction.followUp('ダメージバフ以外にステータスを振ったほういいかも');
         }
         //*コピペ用数値
         await interaction.followUp('攻撃力白:'+atackWhite+'\n攻撃力緑:'+atackGreen+'\n会心率:'+critRate+'\n会心ダメージ:'+critDamage+'\nダメージバフ:'+damageBonus+'\n元素熟知:'+elemental);
