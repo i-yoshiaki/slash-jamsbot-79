@@ -24,7 +24,7 @@ module.exports = {
         const agent = require('../data/randomAgent.json5');
         let randomAgent = 0;
 
-        if(interaction.options.getString('category') === null || interaction.options.getString('category') === 0){
+        if(interaction.options.getString('category') === null || interaction.options.getString('category') === "0"){
             randomAgent=Math.floor(Math.random()*(agent.agent.length-0))+0;
         }
         
