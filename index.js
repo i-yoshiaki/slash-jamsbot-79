@@ -60,7 +60,7 @@ cron.schedule('0 8,20 * * *', () => {
 
 //*螺旋終了定期--------------------------------------------------------------------------------
 cron.schedule('0 0 1,15,28,12 * *', () => {
-    const embed = require('./embed/rasenEmbed.json5');
+    const embed = require('./embed/rasenResetEmbed.json5');
     client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
 });
 
