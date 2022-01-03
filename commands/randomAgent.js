@@ -21,14 +21,45 @@ module.exports = {
     async execute(interaction) {
         //*json5読み込み
         require('json5/lib/register');
-        const agent = require('../data/randomAgent.json5');
-        let randomAgent = 0;
-
+        const agentJson = require('../data/randomAgent.json5');
+        //*初期化全エージェント取得
+        let randomAgent = agentJson.agent.filter(function(item,index){
+            if(item.category == "1" || item.category == "2" || item.category == "3" || item.category == "4") return true;
+        });
+        //*ALLまたはnullだったら全エージェントからランダム
         if(interaction.options.getString('category') === null || interaction.options.getString('category') === "0"){
-            randomAgent=Math.floor(Math.random()*(agent.agent.length-0))+0;
+            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
+        }
+        //*デュエリストだったらデュエリストからランダム
+        else if(interaction.options.getString('category') === "1"){
+            randomAgent = agentJson.agent.filter(function(item,index){
+                if(item.category == "1") return true;
+            });
+            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
+        }
+        //*イニシエーターだったら
+        else if(interaction.options.getString('category') === "2"){
+            randomAgent = agentJson.agent.filter(function(item,index){
+                if(item.category == "2") return true;
+            });
+            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
+        }
+        //*コントローラーだったら
+        else if(interaction.options.getString('category') === "3"){
+            randomAgent = agentJson.agent.filter(function(item,index){
+                if(item.category == "3") return true;
+            });
+            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
+        }
+        //*センチネルだったら
+        else if(interaction.options.getString('category') === "4"){
+            randomAgent = agentJson.agent.filter(function(item,index){
+                if(item.category == "4") return true;
+            });
+            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
         }
         
-        const agentName = agent.agent[randomAgent].name
+        const agentName = randomAgent[agentNum].name
         const embed = {
             //!タイトル
             "title": agentName+"に決まりました。",
