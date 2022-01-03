@@ -60,11 +60,16 @@ module.exports = {
         }
         
         const agentName = randomAgent[agentNum].name
+        const agentUrl = randomAgent[agentNum].url;
         const embed = {
             //!タイトル
             "title": agentName+"に決まりました。",
             //!色
             "color": 6697983,
+            //!大きい画像
+            "image": {
+                "url": agentUrl
+            }
         }
         await interaction.reply({ embeds: [embed] });
     }
