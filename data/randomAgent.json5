@@ -85,6 +85,11 @@
             "name": "チェンバー",
             "category":"4",
             "url":"https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blt6f1392b30784e029/618d9da0d380f814d61f001c/WebUpdate_Chamber_KeyArt.png"
+        },
+        {
+            "name": "ネオン",
+            "category":"1",
+            "url":"https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/bltceaa6cf20d328bd5/5eb7cdc1b1f2e27c950d2aaa/V_AGENTS_587x900_Jett.png"
         }
     ]
 }
