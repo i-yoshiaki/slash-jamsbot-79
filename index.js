@@ -3,7 +3,6 @@ const fs = require('fs');
 const cron = require('node-cron');
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
-const config = require('./config.json');
 require('json5/lib/register');
 //環境変数読み込み
 require('dotenv').config();
