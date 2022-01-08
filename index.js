@@ -6,7 +6,6 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const config = require('./config.json');
 require('json5/lib/register');
 
-
 //*commandsフォルダで管理--------------------------------------------------------------------------------
 //コマンドをcommandフォルダからcommandsに入れる
 const commands = {}
