@@ -5,6 +5,10 @@ const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 const config = require('./config.json');
 require('json5/lib/register');
+//環境変数読み込み
+require('dotenv').config();
+const serverId = process.env.SERVER_ID;
+const defaultChannelId = process.env.DEFAULT_CHANNEL_ID;
 
 //*commandsフォルダで管理--------------------------------------------------------------------------------
 //コマンドをcommandフォルダからcommandsに入れる
@@ -22,7 +26,7 @@ client.once("ready", async () => {
     for (const commandName in commands) {
         data.push(commands[commandName].data)
     }
-    await client.application.commands.set(data,config.serverId);
+    await client.application.commands.set(data,serverId);
 
     //準備完了とステータス
     console.log("Ready!");
@@ -51,7 +55,7 @@ client.on("interactionCreate", async (interaction) => {
     
 cron.schedule('0 8,20 * * *', () => {
     const embed = require('./embed/regularExecute.json5');
-    client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
+    client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
 });
 
 //*定期実行終了--------------------------------------------------------------------------------
@@ -59,12 +63,12 @@ cron.schedule('0 8,20 * * *', () => {
 //*螺旋終了定期--------------------------------------------------------------------------------
 cron.schedule('0 0 1,15,28,12 * *', () => {
     const embed = require('./embed/rasenResetEmbed.json5');
-    client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
+    client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
 });
 
 cron.schedule('0 21 1,15 * *', () => {
     const embed = require('./embed/rasenStartEmbed.json5');
-    client.channels.cache.get(config.defaultChannelId).send({ embeds: [embed] });
+    client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
 });
 //*螺旋終了定期終了--------------------------------------------------------------------------------
 
