@@ -25,7 +25,6 @@ client.once("ready", async () => {
     for (const commandName in commands) {
         data.push(commands[commandName].data)
     }
-    console.log("★★★★★★★★★★★★★"+serverId);
     await client.application.commands.set(data,serverId);
 
     //準備完了とステータス
