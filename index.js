@@ -5,9 +5,9 @@ const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 require('json5/lib/register');
 //環境変数読み込み
-// require('dotenv').config();
-// const serverId = process.env.SERVER_ID;
-// const defaultChannelId = process.env.DEFAULT_CHANNEL_ID;
+require('dotenv').config();
+const serverId = process.env.SERVER_ID;
+const defaultChannelId = process.env.DEFAULT_CHANNEL_ID;
 
 //*commandsフォルダで管理--------------------------------------------------------------------------------
 //コマンドをcommandフォルダからcommandsに入れる
