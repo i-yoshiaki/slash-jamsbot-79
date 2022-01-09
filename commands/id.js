@@ -8,6 +8,6 @@ module.exports = {
         // require('dotenv').config();
         // const serverId = process.env.SERVER_ID;
         // const defaultChannelId = process.env.DEFAULT_CHANNEL_ID;
-        await interaction.reply(id);
+        await interaction.reply("id");
     }
 }
