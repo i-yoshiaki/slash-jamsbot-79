@@ -10,12 +10,11 @@ module.exports = {
             if (err) {
               console.log(err);
             } else {
-              client.query('SELECT * FROM RegularExecuteUrlTable', (err, result) => {
+              client.query('SELECT url FROM RegularExecuteUrlTable', (err, result) => {
                 console.log(result.rows[0]);
-                url=result.rows[0].url;
               });
             }
         });
-        await interaction.reply(url);
+        await interaction.reply("test")
     }
 }
