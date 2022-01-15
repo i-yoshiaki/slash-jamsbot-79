@@ -3,7 +3,8 @@ require('dotenv').config();
 
 exports.pool = new pg.Pool ({
     connectionString:process.env.DATABASE_URL,
-    dialectOptions: {//以下を追加
+    dialect: 'postgres',
+    dialectOptions: {
         ssl: {
           require: true,
           rejectUnauthorized: false
