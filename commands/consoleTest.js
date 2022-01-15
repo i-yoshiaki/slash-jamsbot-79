@@ -10,7 +10,7 @@ module.exports = {
               console.log(err);
             } else {
               client.query('SELECT * FROM RegularExecuteUrlTable', (err, result) => {
-                console.log(result.rows);
+                console.log(result.rows[0]);
               });
             }
         });
