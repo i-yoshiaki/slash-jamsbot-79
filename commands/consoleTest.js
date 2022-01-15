@@ -11,9 +11,9 @@ module.exports = {
             } else {
               client.query('SELECT * FROM RegularExecuteUrlTable', (err, result) => {
                 console.log(result.rows);
-                await interaction.reply(result.rows);
               });
             }
         });
+        await interaction.reply("テスト");
     }
 }
