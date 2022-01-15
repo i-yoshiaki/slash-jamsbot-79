@@ -5,15 +5,17 @@ module.exports = {
     },
     async execute(interaction) {
         const db = require('../db.js');
+        const url='';
         db.pool.connect((err, client) => {
             if (err) {
               console.log(err);
             } else {
               client.query('SELECT * FROM RegularExecuteUrlTable', (err, result) => {
                 console.log(result.rows[0]);
+                url=result.rows[0].url;
               });
             }
         });
-        await interaction.reply("テスト");
+        await interaction.reply(url);
     }
 }
