@@ -14,22 +14,22 @@ exports.birthdayExecute = function() {
     console.log(machamiv)
     console(today==machamiv)
 
-    if(jamv.getMonth() == today.getMonth() + 1 && jamv.getDate() == today.getDate()){
+    if(jamv.getMonth() == today.getMonth()  && jamv.getDate() == today.getDate()){
         //!jam=4
         embed=birthdayData.birthday[4];
-    }else if(motov.getMonth() == today.getMonth() + 1 && motov.getDate() == today.getDate()){
+    }else if(motov.getMonth() == today.getMonth()  && motov.getDate() == today.getDate()){
         //!moto=1
         embed=birthdayData.birthday[1];
-    }else if(reiyuuv.getMonth() == today.getMonth() + 1 && reiyuuv.getDate() == today.getDate()){
+    }else if(reiyuuv.getMonth() == today.getMonth()  && reiyuuv.getDate() == today.getDate()){
         //!reiyuu=0
         embed=birthdayData.birthday[0];
-    }else if(shamojiv.getMonth() == today.getMonth() + 1 && shamojiv.getDate() == today.getDate()){
+    }else if(shamojiv.getMonth() == today.getMonth()  && shamojiv.getDate() == today.getDate()){
         //!shamoji=2
         embed=birthdayData.birthday[2];
-    }else if(tasunv.getMonth() == today.getMonth() + 1 && tasunv.getDate() == today.getDate()){
+    }else if(tasunv.getMonth() == today.getMonth()  && tasunv.getDate() == today.getDate()){
         //!tasun=3
         embed=birthdayData.birthday[3];
-    }else if(machamiv.getMonth() == today.getMonth() + 1 && machamiv.getDate() == today.getDate()){
+    }else if(machamiv.getMonth() == today.getMonth() && machamiv.getDate() == today.getDate()){
         //!machami=5
         embed=birthdayData.birthday[5];
     }
