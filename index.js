@@ -59,7 +59,7 @@ cron.schedule('0 8,20 * * *', () => {
 });
 
 //誕生日
-cron.schedule('5 0 * * *', () =>{
+cron.schedule('1 0 * * *', () =>{
     const birthday = require('./birthday.js');
     let embed = birthday.birthdayExecute();
     if(typeof embed != 'undefined'){
