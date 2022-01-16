@@ -5,7 +5,6 @@ module.exports = {
     },
     async execute(interaction) {
         const db = require('../db.js');
-        const url='';
         db.pool.connect((err, client) => {
             if (err) {
               console.log(err);
