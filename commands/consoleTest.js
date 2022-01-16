@@ -21,9 +21,10 @@ module.exports = {
     const machamiv = new Date(process.env.MACHAMI_BIRTHDAY.slice(0,4),process.env.MACHAMI_BIRTHDAY.slice(4,6),process.env.MACHAMI_BIRTHDAY.slice(6,8));
     console.log(today)
     console.log(machamiv)
-    console.log(today.getDate)
-    console.log(machamiv.getDate)
-    console.log(today.getMonth)
-    console.log(machamiv.getMonth)
+    console.log(today.getDate())
+    console.log(machamiv.getDate())
+    console.log(today.getMonth())
+    console.log(machamiv.getMonth())
+    await interaction.reply("test");
   }
 }
