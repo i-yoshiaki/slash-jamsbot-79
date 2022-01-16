@@ -59,12 +59,14 @@ cron.schedule('0 8,20 * * *', () => {
 });
 
 //誕生日
-cron.schedule('22 0 * * *', () =>{
+cron.schedule('5 0 * * *', () =>{
     const birthday = require('./birthday.js');
     let embed = birthday.birthdayExecute();
-    
+    if(typeof embed != 'undefined'){
         client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
-    
+    }else{
+        console.log("誕生日いないよ");
+    }
 });
 //*定期実行終了--------------------------------------------------------------------------------
 
