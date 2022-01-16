@@ -7,5 +7,6 @@ module.exports = {
       const birthday = require('../birthday.js');
       let embed = birthday.birthdayExecute();
       await interaction.reply({ embeds: [embed] });
+      
   }
 }
