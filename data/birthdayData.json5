@@ -1,0 +1,82 @@
+{
+    "birthday":[
+        {//!レイユウ
+            "title": "今日の誕生日",
+            "description": "今日の誕生日は<@390490727282638850>さんです。",
+            "url": "https://twitter.com/rei_yuu45s",
+            "color": 4013411,
+            "footer": {
+              "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+              "text": "編集 2022/01/16"
+            },
+            "image": {
+              "url": "https://pbs.twimg.com/profile_images/1369525561454829572/77VYzFH9_400x400.jpg"
+            }
+        },
+        {//!モト
+            "title": "今日の誕生日",
+            "description": "今日の誕生日は<@333493104252551178>さんです。",
+            "url": "https://twitter.com/cucumbersworld",
+            "color": 10776027,
+            "footer": {
+              "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+              "text": "編集 2022/01/16"
+            },
+            "image": {
+              "url": "https://pbs.twimg.com/profile_images/1340180272852025344/TVM21mdS_400x400.png"
+            }
+        },
+        {//!しゃもじ
+            "title": "今日の誕生日",
+            "description": "今日の誕生日は<@295560124121088000>さんです。",
+            "url": "https://twitter.com/syamozi2943",
+            "color": 1300127,
+            "footer": {
+              "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+              "text": "編集 2022/01/16"
+            },
+            "image": {
+              "url": "https://pbs.twimg.com/profile_images/1353589613361729536/UEb25cbc_400x400.jpg"
+            }
+        },
+        {//!たーさん
+            "title": "今日の誕生日",
+            "description": "今日の誕生日は<@285375108845928448>さんです。",
+            "url": "https://twitter.com/pta4591q",
+            "color": 14336596,
+            "footer": {
+              "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+              "text": "編集 2022/01/16"
+            },
+            "image": {
+              "url": "https://pbs.twimg.com/profile_images/866148258136989696/hZnMrhil_400x400.jpg"
+            }
+        },
+        {//!じゃむ
+            "title": "今日の誕生日",
+            "description": "今日の誕生日は<@390492792838684684>さんです。",
+            "url": "https://twitter.com/j65601101309565",
+            "color": 6697983,
+            "footer": {
+              "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+              "text": "編集 2022/01/16"
+            },
+            "image": {
+              "url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg"
+            }
+        },
+        {//!抹茶味
+            "title": "今日の誕生日",
+            "description": "今日の誕生日は<@390507299300704256>さんです。",
+            "url":"https://twitter.com/m47ch4m1",
+            "color": 5939464,
+            "footer": {
+                "icon_url": "https://pbs.twimg.com/profile_images/1339862298609897472/BUIWNnxA_400x400.jpg",
+                "text": "編集 2022/01/16"
+            },
+            "image": {
+                "url": "https://pbs.twimg.com/profile_images/1366218295846707203/xENqxqGy_400x400.jpg"
+            }
+        }
+    ]
+}
