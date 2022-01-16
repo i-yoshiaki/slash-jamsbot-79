@@ -2,7 +2,7 @@
     "birthday":[
         {//!レイユウ
             "title": "今日の誕生日",
-            "description": "今日の誕生日は<@390490727282638850>さんです。",
+            "description": "今日は<@390490727282638850>さんの誕生日です。",
             "url": "https://twitter.com/rei_yuu45s",
             "color": 4013411,
             "footer": {
@@ -15,7 +15,7 @@
         },
         {//!モト
             "title": "今日の誕生日",
-            "description": "今日の誕生日は<@333493104252551178>さんです。",
+            "description": "今日は<@333493104252551178>さんの誕生日です。",
             "url": "https://twitter.com/cucumbersworld",
             "color": 10776027,
             "footer": {
@@ -28,7 +28,7 @@
         },
         {//!しゃもじ
             "title": "今日の誕生日",
-            "description": "今日の誕生日は<@295560124121088000>さんです。",
+            "description": "今日は<@295560124121088000>さんの誕生日です。",
             "url": "https://twitter.com/syamozi2943",
             "color": 1300127,
             "footer": {
@@ -41,7 +41,7 @@
         },
         {//!たーさん
             "title": "今日の誕生日",
-            "description": "今日の誕生日は<@285375108845928448>さんです。",
+            "description": "今日は<@285375108845928448>さんの誕生日です。",
             "url": "https://twitter.com/pta4591q",
             "color": 14336596,
             "footer": {
@@ -54,7 +54,7 @@
         },
         {//!じゃむ
             "title": "今日の誕生日",
-            "description": "今日の誕生日は<@390492792838684684>さんです。",
+            "description": "今日は<@390492792838684684>さんの誕生日です。",
             "url": "https://twitter.com/j65601101309565",
             "color": 6697983,
             "footer": {
@@ -67,7 +67,7 @@
         },
         {//!抹茶味
             "title": "今日の誕生日",
-            "description": "今日の誕生日は<@390507299300704256>さんです。",
+            "description": "今日は<@390507299300704256>さんの誕生日です。",
             "url":"https://twitter.com/m47ch4m1",
             "color": 5939464,
             "footer": {
