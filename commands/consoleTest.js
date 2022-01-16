@@ -24,7 +24,7 @@ module.exports = {
     console.log("todaym="+today.getMonth())
     console.log("machamivm="+machamiv.getMonth())
     console.log(today.getMonth()+1 == machamiv.getMonth())
-    console.log(today.getDate() == machamiv.getDate()+1)
+    console.log(today.getDate() == machamiv.getDate())
     await interaction.reply("test");
 
   }
