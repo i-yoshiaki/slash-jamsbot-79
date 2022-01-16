@@ -26,5 +26,6 @@ module.exports = {
     console.log(today.getMonth())
     console.log(machamiv.getMonth())
     await interaction.reply("test");
+    
   }
 }
