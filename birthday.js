@@ -10,10 +10,6 @@ exports.birthdayExecute = function() {
     const tasunv = new Date(process.env.TASUN_BIRTHDAY.slice(0,4),process.env.TASUN_BIRTHDAY.slice(4,6),process.env.TASUN_BIRTHDAY.slice(6,8));
     const machamiv = new Date(process.env.MACHAMI_BIRTHDAY.slice(0,4),process.env.MACHAMI_BIRTHDAY.slice(4,6),process.env.MACHAMI_BIRTHDAY.slice(6,8));
 
-    console.log(today)
-    console.log(machamiv)
-    console.log(today==machamiv)
-
     if(jamv.getMonth() == today.getMonth()+1  && jamv.getDate() == today.getDate()-1){
         //!jam=4
         embed=birthdayData.birthday[4];
