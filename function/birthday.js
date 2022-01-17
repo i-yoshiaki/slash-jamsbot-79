@@ -1,6 +1,6 @@
 exports.birthdayExecute = function() {
     require('json5/lib/register');
-    const birthdayData = require('./data/birthdayData.json5');
+    const birthdayData = require('../data/birthdayData.json5');
     let embed;
     const today = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
     const jamv = new Date(process.env.JAM_BIRTHDAY.slice(0,4),process.env.JAM_BIRTHDAY.slice(4,6),process.env.JAM_BIRTHDAY.slice(6,8));

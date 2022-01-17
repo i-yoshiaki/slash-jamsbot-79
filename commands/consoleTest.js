@@ -5,13 +5,16 @@ module.exports = {
   },
   async execute(interaction) {
     const db = require('../db.js');
-    let tableResult;
-    db.pool.connect()
-    .then(() => console.log("Connected successfuly"))
-    .then(() => db.pool.query("SELECT * FROM ValorantAgentTable"))
-    .then(result => tableResult = result.rows[0])
-    .then(() => console.log(tableResult.url))
-    .then(() => interaction.reply("tableResult = "+tableResult.url))
-
+    const admin = require('../function/adminCheck.js');
+    let adminFlg = admin.adminCheckExecute(interaction);
+    if(adminFlg){
+      let tableResult;
+      db.pool.connect()
+      .then(() => console.log("Connected successfuly"))
+      .then(() => db.pool.query("SELECT * FROM ValorantAgentTable"))
+      .then(result => tableResult = result.rows[0])
+      .then(() => console.log(tableResult.url))
+      .then(() => interaction.reply("tableResult = "+tableResult.url))
+    }
   }
 }

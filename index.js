@@ -60,7 +60,7 @@ cron.schedule('0 8,20 * * *', () => {
 
 //誕生日
 cron.schedule('1 0 * * *', () =>{
-    const birthday = require('./birthday.js');
+    const birthday = require('./function/birthday.js');
     let embed = birthday.birthdayExecute();
     if(typeof embed != 'undefined'){
         client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
