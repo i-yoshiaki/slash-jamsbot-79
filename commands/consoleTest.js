@@ -15,6 +15,6 @@ module.exports = {
       .then(result => tableResult = result.rows[0])
       .then(() => console.log(tableResult.url))
       .then(() => interaction.reply("tableResult = "+tableResult.url))
-    }
+    }else await interaction.reply("権限がないよ")
   }
 }
