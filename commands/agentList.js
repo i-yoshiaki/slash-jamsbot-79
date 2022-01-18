@@ -1,7 +1,7 @@
 module.exports = {
     data: {
-        name: "【Admin】agent-list",
-        description: "console見る用",
+        name: "agent-list",
+        description: "【Admin】エージェント一覧",
     },
     async execute(interaction) {
         const db = require('../db.js');
@@ -21,7 +21,7 @@ module.exports = {
                 }
                 interaction.reply(str);
             })
-            
+
         }else await interaction.reply("権限がないよ")
     }
 }
