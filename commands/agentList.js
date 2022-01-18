@@ -17,7 +17,7 @@ module.exports = {
             .then(() => console.log(tableResult))
             .then(function(){
                 for(let i=0;i<tableResult.length;i++){
-                    str+=tableResult[i].name+"\n"
+                    str+="id:"+tableResult[i].id+" name:"+tableResult[i].name+"\n"
                 }
                 interaction.reply(str);
             })

@@ -15,7 +15,6 @@ module.exports = {
         const db = require('../db.js');
         const admin = require('../function/adminCheck.js');
         const queryString=interaction.options.getString('query');
-        let str="";
         let adminFlg=admin.adminCheckExecute(interaction);
         if(adminFlg){
             let tableResult;
