@@ -21,6 +21,7 @@ module.exports = {
                 }
                 interaction.reply(str);
             })
+            
         }else await interaction.reply("権限がないよ")
     }
 }
