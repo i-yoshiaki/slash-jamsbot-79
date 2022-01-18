@@ -14,7 +14,6 @@ module.exports = {
             .then(() => console.log("Connected successfuly"))
             .then(() => db.pool.query("SELECT * FROM ValorantAgentTable ORDER BY id ASC"))
             .then(result => tableResult = result.rows)
-            .then(() => console.log(tableResult))
             .then(function(){
                 for(let i=0;i<tableResult.length;i++){
                     str+="id:"+tableResult[i].id+" name:"+tableResult[i].name+"\n"
