@@ -1,6 +1,6 @@
 module.exports = {
     data: {
-        name: "query-execute",
+        name: "99-query-execute",
         description: "【Admin】クエリ実行",
         options: [
             {

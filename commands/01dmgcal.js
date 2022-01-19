@@ -1,6 +1,6 @@
 module.exports = {
     data: {
-        name: "dmgcal",
+        name: "01-dmgcal",
         description: "【原神】ダメージの期待値を計算します。",
         options: [
             {

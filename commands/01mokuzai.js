@@ -1,6 +1,6 @@
 module.exports = {
     data: {
-        name: "mokuzai",
+        name: "01-mokuzai",
         description: "【原神】木材の場所を教えてくれます。",
         options: [
             {

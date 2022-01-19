@@ -1,6 +1,6 @@
 module.exports = {
     data: {
-        name: "random-agent",
+        name: "02-random-agent",
         description: "【Valorant】ランダムにエージェントを選択してくれます。",
         options: [
             {

@@ -1,6 +1,6 @@
 module.exports = {
     data: {
-        name: "snipe",
+        name: "00-snipe",
         description: "スナイプするときに使います。10秒カウントしてくれます。",
     },
     async execute(interaction) {

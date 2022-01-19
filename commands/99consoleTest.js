@@ -1,6 +1,6 @@
 module.exports = {
   data: {
-      name: "console-test",
+      name: "99-console-test",
       description: "console見る用",
   },
   async execute(interaction) {

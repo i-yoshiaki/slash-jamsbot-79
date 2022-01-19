@@ -1,7 +1,7 @@
 module.exports = {
     data: {
-        name: "agent-list",
-        description: "【Admin】エージェント一覧",
+        name: "99-table-list",
+        description: "【Admin】テーブル一覧",
     },
     async execute(interaction) {
         const db = require('../db.js');
@@ -12,11 +12,12 @@ module.exports = {
             let tableResult;
             db.pool.connect()
             .then(() => console.log("Connected successfuly"))
-            .then(() => db.pool.query("SELECT * FROM ValorantAgentTable ORDER BY id ASC"))
+            .then(() => db.pool.query("select tablename from pg_tables where schemaname not like 'pg_%' and schemaname != 'information_schema';"))
             .then(result => tableResult = result.rows)
+            .then(() => console.log(tableResult))
             .then(function(){
                 for(let i=0;i<tableResult.length;i++){
-                    str+="id:"+tableResult[i].id+" name:"+tableResult[i].name+"\n"
+                    str+=tableResult[i].tablename+"\n"
                 }
                 interaction.reply(str);
             })
