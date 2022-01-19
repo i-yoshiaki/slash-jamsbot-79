@@ -21,7 +21,7 @@ module.exports = {
     async execute(interaction) {
         //*query文字列
         let sql="";
-        //*sql結果
+        //*変数初期化
         let tableResult = null;
         let agentNum = 0;
         let agentName = "";
@@ -30,7 +30,6 @@ module.exports = {
         const db = require('../db.js');
         db.pool.connect()
         .then(() => console.log("Connected successfuly"))
-        // .then(() => db.pool.query("SELECT * FROM valorantagenttable"))
         .then(function(){
             if(interaction.options.getString('category') === null || interaction.options.getString('category') === "0"){
                 sql="SELECT * FROM valorantagenttable";
@@ -46,7 +45,7 @@ module.exports = {
         })
         .then(() => db.pool.query(sql))
         .then(result => tableResult = result.rows)
-        .then(async function(){
+        .then(function(){
             agentNum=Math.floor(Math.random()*(tableResult.length-0))+0;
             agentName = tableResult[agentNum].name
             agentUrl = tableResult[agentNum].url;
@@ -60,9 +59,8 @@ module.exports = {
                     "url": agentUrl
                 }
             }
-            await interaction.reply({ embeds: [embed] });
+            interaction.reply({ embeds: [embed] });
         })
-        .catch(await interaction.reply("コマンドの実行に失敗しました。"));
-        
+        .catch(console.error)
     }
 }
