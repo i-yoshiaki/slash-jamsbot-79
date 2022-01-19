@@ -19,58 +19,50 @@ module.exports = {
         ],
     },
     async execute(interaction) {
-        //*json5読み込み
-        require('json5/lib/register');
-        const agentJson = require('../data/randomAgent.json5');
-        //*初期化全エージェント取得
-        let randomAgent = agentJson.agent.filter(function(item,index){
-            if(item.category == "1" || item.category == "2" || item.category == "3" || item.category == "4") return true;
-        });
-        //*ALLまたはnullだったら全エージェントからランダム
-        if(interaction.options.getString('category') === null || interaction.options.getString('category') === "0"){
-            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
-        }
-        //*デュエリストだったらデュエリストからランダム
-        else if(interaction.options.getString('category') === "1"){
-            randomAgent = agentJson.agent.filter(function(item,index){
-                if(item.category == "1") return true;
-            });
-            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
-        }
-        //*イニシエーターだったら
-        else if(interaction.options.getString('category') === "2"){
-            randomAgent = agentJson.agent.filter(function(item,index){
-                if(item.category == "2") return true;
-            });
-            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
-        }
-        //*コントローラーだったら
-        else if(interaction.options.getString('category') === "3"){
-            randomAgent = agentJson.agent.filter(function(item,index){
-                if(item.category == "3") return true;
-            });
-            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
-        }
-        //*センチネルだったら
-        else if(interaction.options.getString('category') === "4"){
-            randomAgent = agentJson.agent.filter(function(item,index){
-                if(item.category == "4") return true;
-            });
-            agentNum=Math.floor(Math.random()*(randomAgent.length-0))+0;
-        }
-        
-        const agentName = randomAgent[agentNum].name
-        const agentUrl = randomAgent[agentNum].url;
-        const embed = {
-            //!タイトル
-            "title": agentName+"に決まりました。",
-            //!色
-            "color": 6697983,
-            //!大きい画像
-            "image": {
-                "url": agentUrl
+        //*query文字列
+        let sql="";
+        //*sql結果
+        let tableResult = null;
+        let agentNum = 0;
+        let agentName = "";
+        let agentUrl = "";
+        //*db接続
+        const db = require('../db.js');
+        db.pool.connect()
+        .then(() => console.log("Connected successfuly"))
+        // .then(() => db.pool.query("SELECT * FROM valorantagenttable"))
+        .then(function(){
+            if(interaction.options.getString('category') === null || interaction.options.getString('category') === "0"){
+                sql="SELECT * FROM valorantagenttable";
+            }else if(interaction.options.getString('category') === "1"){
+                sql="SELECT * FROM valorantagenttable where category = 1";
+            }else if(interaction.options.getString('category') === "2"){
+                sql="SELECT * FROM valorantagenttable where category = 2";
+            }else if(interaction.options.getString('category') === "3"){
+                sql="SELECT * FROM valorantagenttable where category = 3";
+            }else if(interaction.options.getString('category') === "4"){
+                sql="SELECT * FROM valorantagenttable where category = 4";
             }
-        }
-        await interaction.reply({ embeds: [embed] });
+        })
+        .then(() => db.pool.query(sql))
+        .then(result => tableResult = result.rows)
+        .then(function(){
+            agentNum=Math.floor(Math.random()*(tableResult.length-0))+0;
+            agentName = tableResult[agentNum].name
+            agentUrl = tableResult[agentNum].url;
+            const embed = {
+                //!タイトル
+                "title": agentName+"に決まりました。",
+                //!色
+                "color": 6697983,
+                //!大きい画像
+                "image": {
+                    "url": agentUrl
+                }
+            }
+            await interaction.reply({ embeds: [embed] });
+        })
+        .catch(await interaction.reply("コマンドの実行に失敗しました。"));
+        
     }
 }
