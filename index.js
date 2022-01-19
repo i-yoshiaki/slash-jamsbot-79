@@ -26,9 +26,9 @@ client.once("ready", async () => {
     for (const commandName in commands) {
         data.push(commands[commandName].data)
     }
-    
-    guild.commands.set([]);
-    client.application.commands.set([]);
+    //!コマンド初期化
+    // guild.commands.set([]);
+    // client.application.commands.set([]);
     client.application.commands.set(data,serverId);
 
     //準備完了とステータス
