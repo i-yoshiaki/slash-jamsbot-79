@@ -20,6 +20,7 @@ module.exports = {
                 }
                 interaction.reply(str);
             })
+            .catch(console.error)
 
         }else await interaction.reply("権限がないよ")
     }
