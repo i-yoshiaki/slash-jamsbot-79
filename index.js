@@ -21,12 +21,15 @@ for (const file of commandFiles) {
 
 //commandsから指定したサーバーに登録
 client.once("ready", async () => {
+    const guild = client.guilds.cache.get(serverId);
     const data = [];
     for (const commandName in commands) {
         data.push(commands[commandName].data)
     }
     
-    await client.application.commands.set(data,serverId);
+    guild.commands.set([]);
+    client.application.commands.set([]);
+    client.application.commands.set(data,serverId);
 
     //準備完了とステータス
     console.log("Ready!");
@@ -44,7 +47,7 @@ client.on("interactionCreate", async (interaction) => {
     } catch (error) {
         console.error(error);
         await interaction.reply({
-            content: 'There was an error while executing this command!',
+            content: 'コマンド中にエラー発生',
             ephemeral: true,
         })
     }
