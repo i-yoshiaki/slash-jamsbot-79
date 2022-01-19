@@ -46,7 +46,7 @@ module.exports = {
         })
         .then(() => db.pool.query(sql))
         .then(result => tableResult = result.rows)
-        .then(function(){
+        .then(async function(){
             agentNum=Math.floor(Math.random()*(tableResult.length-0))+0;
             agentName = tableResult[agentNum].name
             agentUrl = tableResult[agentNum].url;
