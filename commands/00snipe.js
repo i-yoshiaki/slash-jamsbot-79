@@ -4,6 +4,7 @@ module.exports = {
         description: "スナイプするときに使います。10秒カウントしてくれます。",
     },
     async execute(interaction) {
+        //*1秒ずつ待ってgoを出す
         const wait = require('util').promisify(setTimeout);
         await interaction.reply('10');
         await wait(1000);
