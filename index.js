@@ -57,7 +57,6 @@ client.on("interactionCreate", async (interaction) => {
 //*定期実行--------------------------------------------------------------------------------
 //原神定期通知
 cron.schedule('0 8,20 * * *', () => {
-    const embed = require('./embed/regularExecute.json5');
     let embed = require('./embed/regularExecute.json5');
     let tableResult = null;
     //*db接続
