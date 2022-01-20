@@ -58,7 +58,22 @@ client.on("interactionCreate", async (interaction) => {
 //原神定期通知
 cron.schedule('0 8,20 * * *', () => {
     const embed = require('./embed/regularExecute.json5');
-    client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
+    let embed = require('./embed/regularExecute.json5');
+    let tableResult = null;
+    //*db接続
+    const db = require('./db.js');
+    db.pool.connect()
+    .then(sql => {
+        sql.query("SELECT url FROM regularexecuteurltable")
+        .then(result => {
+            sql.release()
+            tableResult = result.rows
+            //!regularexecuteurltableのurlを代入
+            embed.image.url=tableResult[0].url
+            //!鯖に送信
+            client.channels.cache.get(defaultChannelId).send({ embeds: [embed] });
+        })
+    })
 });
 
 //誕生日
