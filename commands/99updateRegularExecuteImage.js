@@ -15,7 +15,7 @@ module.exports = {
         const db = require('../db.js');
         const admin = require('../function/adminCheck.js');
         let queryStringUrl=interaction.options.getString('url');
-        let queryString = "UPDATE regularexecuteurltable SET url = "+queryStringUrl+" WHERE id = 1"
+        let queryString = "UPDATE regularexecuteurltable SET url = '"+queryStringUrl+"' WHERE id = 1"
         let adminFlg=admin.adminCheckExecute(interaction);
         if(adminFlg){
             db.pool.connect()
