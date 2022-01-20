@@ -21,7 +21,7 @@ module.exports = {
             db.pool.connect()
             .then(() => console.log("Connected successfuly"))
             .then(() => db.pool.query(queryString))
-            .then(() => interaction.reply("クエリ実行完了"))
+            .then(() => interaction.reply("定期通知の画像を更新しました。"))
             .then(() => interaction.followUp(queryStringUrl))
         }else await interaction.reply("権限がないよ")
     }
