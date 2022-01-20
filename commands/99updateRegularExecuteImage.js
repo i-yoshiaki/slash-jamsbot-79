@@ -1,12 +1,12 @@
 module.exports = {
     data: {
-        name: "99-query-execute",
-        description: "【Admin】クエリ実行",
+        name: "99-update-regular-execute-image",
+        description: "【Admin】定期実行の画像アップデート",
         options: [
             {
                 type: "STRING",
-                name: "query",
-                description: "query入力",
+                name: "url",
+                description: "url入力",
                 required: true,
             }
         ],
@@ -14,7 +14,8 @@ module.exports = {
     async execute(interaction) {
         const db = require('../db.js');
         const admin = require('../function/adminCheck.js');
-        const queryString=interaction.options.getString('query');
+        let queryStringUrl=interaction.options.getString('url');
+        let queryString = "UPDATE regularexecuteurltable SET url = "+queryStringUrl+" WHERE id = 1"
         let adminFlg=admin.adminCheckExecute(interaction);
         if(adminFlg){
             db.pool.connect()
